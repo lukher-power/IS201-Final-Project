@@ -1,0 +1,34 @@
+/* Custom overrides for professional pages */
+body { font-family: 'Mulish', Arial, sans-serif; color: #222; }
+.header-brand { color: #0d6efd; }
+.resume-item { margin-bottom: 1.5rem; }
+.card { border-radius: 0.5rem; }
+.navbar .nav-link { color: #333 !important; }
+footer { font-size: 0.9rem; color: #666; }
+
+header.bg-primary.text-white {
+  position: relative;
+  background-image: url('https://images.ctfassets.net/0wjmk6wgfops/4BBUxQ4lkEI2pjPSYqtrH7/689cbfdfa76ab363467bbd0c897ea9a3/AdobeStock_287502450.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+header.bg-primary.text-white::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(41, 55, 240, 0.55);
+  mix-blend-mode: multiply;
+}
+
+header.bg-primary.text-white .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Utility layout blocks */
+.block-left { float:left; width:65%; }
+.block-right { float:right; width:30%; }
+.block-center { text-align:center; }

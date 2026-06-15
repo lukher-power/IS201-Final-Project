@@ -1,0 +1,36 @@
+/* Scratch page custom stylesheet (from-scratch) */
+/* 1. Base font and colors */
+body { font-family: 'Kanit', Arial, sans-serif; color: #222; background-color: #f4f7fb; margin:0; }
+.header { background: linear-gradient(90deg,#0b3d91,#3b8bd8); color: #fff; padding:20px 16px; }
+.header h1 { margin:0; font-size:1.6rem; }
+.navlinks a { color: #f0f8ff; text-decoration:none; margin-right:8px; }
+
+/* 2. Layout blocks (at least three divs used in HTML): content, intro, lists */
+.content { max-width:980px; margin:24px auto; padding:12px; }
+.intro, .lists, .image, .video, .tableau { background:#fff; border-radius:8px; padding:16px; margin-bottom:18px; box-shadow:0 2px 6px rgba(0,0,0,0.06); }
+
+/* 3. Image styling */
+.image img { max-width:100%; height:auto; border-radius:6px; display:block; }
+.caption { color:#666; font-size:0.9rem; }
+
+/* 4. Video responsive wrapper */
+.video-wrap { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:8px; }
+.video-wrap iframe { position:absolute; top:0; left:0; width:100%; height:100%; }
+
+/* 5. Tableau viz wrapper */
+.viz-wrap { width:100%; overflow:hidden; border-radius:6px; box-shadow:0 3px 12px rgba(0,0,0,0.08); }
+.viz-wrap iframe { border:1px solid #ddd; }
+
+/* 6. Typography styles */
+h2 { color:#0b3d91; font-family: 'Mulish', sans-serif; }
+.intro p,
+.navigation-back p,
+.caption { color:#424a5a; line-height:1.7; }
+
+/* 7. Link styling */
+a { color:#0b3d91; text-decoration:none; }
+a:hover { text-decoration:underline; }
+
+/* Utility */
+.site-footer { text-align:center; color:#666; padding:16px 8px; }
+.navigation-back { background:#eef3fb; border-radius:8px; padding:16px; }

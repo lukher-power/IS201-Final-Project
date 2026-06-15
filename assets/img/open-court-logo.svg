@@ -1,0 +1,341 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <!-- Background gradient: deep midnight city sky -->
+    <radialGradient id="bgGrad" cx="50%" cy="60%" r="70%">
+      <stop offset="0%" stop-color="#1A0A2E"/>
+      <stop offset="100%" stop-color="#04040F"/>
+    </radialGradient>
+
+    <!-- Ball gradient: classic leather orange -->
+    <radialGradient id="ballGrad" cx="38%" cy="32%" r="60%">
+      <stop offset="0%" stop-color="#FF8C1A"/>
+      <stop offset="45%" stop-color="#FF5C00"/>
+      <stop offset="100%" stop-color="#B83200"/>
+    </radialGradient>
+
+    <!-- Ball glow -->
+    <radialGradient id="ballGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF5C00" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#FF5C00" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Gold gradient for main title text -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFE55C"/>
+      <stop offset="40%" stop-color="#FFD000"/>
+      <stop offset="100%" stop-color="#CC8800"/>
+    </linearGradient>
+
+    <!-- White shimmer for subtitle -->
+    <linearGradient id="subGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#AAAACC"/>
+    </linearGradient>
+
+    <!-- City skyline clip inside ball -->
+    <clipPath id="ballClip">
+      <circle cx="138" cy="205" r="88"/>
+    </clipPath>
+
+    <!-- Neon orange glow filter -->
+    <filter id="orangeGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Gold text glow -->
+    <filter id="goldGlow" x="-10%" y="-30%" width="120%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Subtle drop shadow -->
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+
+    <!-- Court line glow -->
+    <filter id="lineGlow" x="-20%" y="-100%" width="140%" height="300%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Star burst glow -->
+    <filter id="starGlow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- ═══ BACKGROUND ═══ -->
+  <rect width="800" height="500" fill="url(#bgGrad)"/>
+
+  <!-- Stars in sky -->
+  <g opacity="0.6">
+    <circle cx="60" cy="30" r="1.2" fill="#fff"/>
+    <circle cx="120" cy="55" r="0.8" fill="#fff"/>
+    <circle cx="200" cy="20" r="1.4" fill="#FFD000"/>
+    <circle cx="310" cy="45" r="0.9" fill="#fff"/>
+    <circle cx="450" cy="15" r="1.1" fill="#fff"/>
+    <circle cx="560" cy="38" r="0.7" fill="#fff"/>
+    <circle cx="650" cy="22" r="1.3" fill="#FFD000"/>
+    <circle cx="730" cy="50" r="0.9" fill="#fff"/>
+    <circle cx="780" cy="30" r="1.0" fill="#fff"/>
+    <circle cx="90" cy="80" r="0.7" fill="#fff"/>
+    <circle cx="400" cy="70" r="0.8" fill="#fff"/>
+    <circle cx="700" cy="75" r="1.2" fill="#fff"/>
+  </g>
+
+  <!-- City skyline silhouette (background, behind ball) -->
+  <g opacity="0.12" fill="#6633CC">
+    <!-- Far background city buildings -->
+    <rect x="240" y="310" width="30" height="120"/>
+    <rect x="275" y="280" width="20" height="150"/>
+    <rect x="300" y="295" width="35" height="135"/>
+    <rect x="340" y="260" width="25" height="170"/>
+    <rect x="370" y="300" width="40" height="130"/>
+    <rect x="415" y="275" width="22" height="155"/>
+    <rect x="442" y="285" width="30" height="145"/>
+    <rect x="477" y="260" width="28" height="170"/>
+    <rect x="510" y="310" width="20" height="120"/>
+    <rect x="535" y="290" width="35" height="140"/>
+    <rect x="575" y="275" width="25" height="155"/>
+    <rect x="605" y="300" width="18" height="130"/>
+    <!-- Antenna on tall building -->
+    <rect x="342" y="240" width="2" height="22"/>
+    <rect x="479" y="242" width="2" height="20"/>
+  </g>
+
+  <!-- Ground floor city glow line -->
+  <rect x="0" y="428" width="800" height="2" fill="#FF5C00" opacity="0.15" filter="url(#lineGlow)"/>
+
+  <!-- ═══ BASKETBALL (left anchor of composition) ═══ -->
+
+  <!-- Outer glow halo -->
+  <circle cx="138" cy="205" r="115" fill="url(#ballGlow)" opacity="0.7"/>
+
+  <!-- Ball shadow -->
+  <ellipse cx="145" cy="310" rx="75" ry="12" fill="#000" opacity="0.4"/>
+
+  <!-- Main ball -->
+  <circle cx="138" cy="205" r="88" fill="url(#ballGrad)" filter="url(#shadow)"/>
+
+  <!-- City skyline clipped INSIDE the ball — the "open world" signature element -->
+  <g clip-path="url(#ballClip)">
+    <!-- Night sky inside ball -->
+    <rect x="50" y="117" width="176" height="176" fill="#0A0020"/>
+
+    <!-- City buildings inside ball -->
+    <g fill="#1A0A3E">
+      <rect x="58" y="230" width="14" height="64"/>
+      <rect x="75" y="210" width="10" height="84"/>
+      <rect x="88" y="218" width="18" height="76"/>
+      <rect x="109" y="200" width="12" height="94"/>
+      <rect x="124" y="215" width="20" height="79"/>
+      <rect x="147" y="205" width="14" height="89"/>
+      <rect x="164" y="222" width="16" height="72"/>
+      <rect x="183" y="212" width="10" height="82"/>
+      <rect x="196" y="225" width="15" height="69"/>
+      <rect x="214" y="240" width="12" height="54"/>
+    </g>
+    <!-- Lit windows in buildings -->
+    <g fill="#FFD000" opacity="0.8">
+      <rect x="62" y="235" width="3" height="3"/>
+      <rect x="67" y="243" width="3" height="3"/>
+      <rect x="78" y="220" width="3" height="3"/>
+      <rect x="91" y="228" width="3" height="3"/>
+      <rect x="97" y="240" width="3" height="3"/>
+      <rect x="112" y="210" width="3" height="3"/>
+      <rect x="112" y="220" width="3" height="3"/>
+      <rect x="127" y="225" width="3" height="3"/>
+      <rect x="133" y="236" width="3" height="3"/>
+      <rect x="150" y="215" width="3" height="3"/>
+      <rect x="156" y="228" width="3" height="3"/>
+      <rect x="167" y="230" width="3" height="3"/>
+      <rect x="186" y="222" width="3" height="3"/>
+      <rect x="199" y="234" width="3" height="3"/>
+    </g>
+    <!-- Orange windows -->
+    <g fill="#FF5C00" opacity="0.7">
+      <rect x="62" y="248" width="3" height="3"/>
+      <rect x="91" y="222" width="3" height="3"/>
+      <rect x="127" y="233" width="3" height="3"/>
+      <rect x="150" y="225" width="3" height="3"/>
+      <rect x="167" y="238" width="3" height="3"/>
+    </g>
+
+    <!-- Neon ground level glow -->
+    <rect x="50" y="286" width="176" height="8" fill="#FF5C00" opacity="0.2"/>
+
+    <!-- Basketball seam lines overlaid ON the city (unifying element) -->
+    <path d="M50,205 Q138,140 226,205" stroke="#CC4400" stroke-width="3" fill="none" opacity="0.9"/>
+    <path d="M50,205 Q138,270 226,205" stroke="#CC4400" stroke-width="3" fill="none" opacity="0.9"/>
+  </g>
+
+  <!-- Ball seam lines (outside city area — classic basketball curves) -->
+  <!-- Vertical seam -->
+  <path d="M138,117 C108,117 88,155 88,205 C88,255 108,293 138,293"
+        stroke="#7A2200" stroke-width="3.5" fill="none"/>
+  <path d="M138,117 C168,117 188,155 188,205 C188,255 168,293 138,293"
+        stroke="#7A2200" stroke-width="3.5" fill="none"/>
+  <!-- Horizontal seam -->
+  <line x1="50" y1="205" x2="226" y2="205" stroke="#7A2200" stroke-width="3.5"/>
+
+  <!-- Highlight sheen on ball -->
+  <ellipse cx="110" cy="168" rx="28" ry="18" fill="white" opacity="0.12"/>
+  <ellipse cx="102" cy="163" rx="10" ry="7" fill="white" opacity="0.18"/>
+
+  <!-- ═══ COURT LINE ELEMENT (connects ball to text) ═══ -->
+  <!-- Three-point arc suggestion at bottom -->
+  <path d="M55,430 Q138,365 221,430" stroke="#FF5C00" stroke-width="2" fill="none" opacity="0.5" filter="url(#lineGlow)"/>
+  <!-- Free throw line suggestion -->
+  <line x1="80" y1="390" x2="196" y2="390" stroke="#FF5C00" stroke-width="1.5" opacity="0.35" filter="url(#lineGlow)"/>
+
+  <!-- ═══ MAIN TITLE: OPEN COURT ═══ -->
+  <!-- Shadow layer -->
+  <text x="262" y="236"
+        font-family="'Impact', 'Arial Black', sans-serif"
+        font-size="118"
+        font-weight="900"
+        letter-spacing="-2"
+        fill="#000"
+        opacity="0.5"
+        transform="skewX(-4)">OPEN</text>
+
+  <!-- Main OPEN text -->
+  <text x="258" y="232"
+        font-family="'Impact', 'Arial Black', sans-serif"
+        font-size="118"
+        font-weight="900"
+        letter-spacing="-2"
+        fill="url(#titleGrad)"
+        filter="url(#goldGlow)"
+        transform="skewX(-4)">OPEN</text>
+
+  <!-- COURT shadow -->
+  <text x="262" y="346"
+        font-family="'Impact', 'Arial Black', sans-serif"
+        font-size="118"
+        font-weight="900"
+        letter-spacing="-2"
+        fill="#000"
+        opacity="0.5"
+        transform="skewX(-4)">COURT</text>
+
+  <!-- COURT main text — slightly inset/offset for dimension -->
+  <text x="258" y="342"
+        font-family="'Impact', 'Arial Black', sans-serif"
+        font-size="118"
+        font-weight="900"
+        letter-spacing="-2"
+        fill="url(#titleGrad)"
+        filter="url(#goldGlow)"
+        transform="skewX(-4)">COURT</text>
+
+  <!-- Orange outline / stroke version for depth -->
+  <text x="258" y="232"
+        font-family="'Impact', 'Arial Black', sans-serif"
+        font-size="118"
+        font-weight="900"
+        letter-spacing="-2"
+        fill="none"
+        stroke="#FF5C00"
+        stroke-width="1.5"
+        opacity="0.4"
+        transform="skewX(-4)">OPEN</text>
+  <text x="258" y="342"
+        font-family="'Impact', 'Arial Black', sans-serif"
+        font-size="118"
+        font-weight="900"
+        letter-spacing="-2"
+        fill="none"
+        stroke="#FF5C00"
+        stroke-width="1.5"
+        opacity="0.4"
+        transform="skewX(-4)">COURT</text>
+
+  <!-- ═══ TAGLINE ═══ -->
+  <!-- Divider line before tagline -->
+  <line x1="258" y1="368" x2="775" y2="368" stroke="#FF5C00" stroke-width="1.5" opacity="0.5"/>
+
+  <text x="258" y="398"
+        font-family="'Arial Narrow', 'Arial', sans-serif"
+        font-size="22"
+        font-weight="700"
+        letter-spacing="8"
+        fill="url(#subGrad)"
+        opacity="0.85">THE OPEN WORLD BASKETBALL EXPERIENCE</text>
+
+  <!-- ═══ EDITION BADGE ═══ -->
+  <!-- Console badge pill -->
+  <rect x="258" y="418" width="180" height="32" rx="4" fill="#FF5C00" opacity="0.15"/>
+  <rect x="258" y="418" width="180" height="32" rx="4" fill="none" stroke="#FF5C00" stroke-width="1.2" opacity="0.6"/>
+  <text x="348" y="439"
+        font-family="'Arial', sans-serif"
+        font-size="12"
+        font-weight="700"
+        letter-spacing="3"
+        fill="#FF5C00"
+        text-anchor="middle">CONSOLE EDITION</text>
+
+  <!-- Rating-style badge -->
+  <rect x="452" y="418" width="80" height="32" rx="4" fill="#FFD000" opacity="0.12"/>
+  <rect x="452" y="418" width="80" height="32" rx="4" fill="none" stroke="#FFD000" stroke-width="1.2" opacity="0.5"/>
+  <text x="492" y="439"
+        font-family="'Arial', sans-serif"
+        font-size="12"
+        font-weight="700"
+        letter-spacing="3"
+        fill="#FFD000"
+        text-anchor="middle">OPEN WORLD</text>
+
+  <!-- ═══ DECORATIVE ELEMENTS ═══ -->
+
+  <!-- Right side: faint basketball orbit rings -->
+  <ellipse cx="680" cy="180" rx="85" ry="30" fill="none" stroke="#FF5C00" stroke-width="1" opacity="0.12" transform="rotate(-15 680 180)"/>
+  <ellipse cx="680" cy="180" rx="60" ry="22" fill="none" stroke="#FFD000" stroke-width="1" opacity="0.1" transform="rotate(-15 680 180)"/>
+
+  <!-- Small basketball icon top-right corner -->
+  <circle cx="748" cy="62" r="32" fill="#FF5C00" opacity="0.07"/>
+  <circle cx="748" cy="62" r="28" fill="none" stroke="#FF5C00" stroke-width="1.5" opacity="0.25"/>
+  <line x1="720" y1="62" x2="776" y2="62" stroke="#7A2200" stroke-width="1.5" opacity="0.5"/>
+  <path d="M748,34 C735,34 726,47 726,62 C726,77 735,90 748,90" stroke="#7A2200" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <path d="M748,34 C761,34 770,47 770,62 C770,77 761,90 748,90" stroke="#7A2200" stroke-width="1.5" fill="none" opacity="0.5"/>
+
+  <!-- Scatter sparks / stars near ball -->
+  <g filter="url(#starGlow)" opacity="0.7">
+    <polygon points="240,155 244,167 256,167 246,174 250,186 240,179 230,186 234,174 224,167 236,167"
+             fill="#FFD000" transform="scale(0.55) translate(200,130)"/>
+    <polygon points="240,155 244,167 256,167 246,174 250,186 240,179 230,186 234,174 224,167 236,167"
+             fill="#FF5C00" transform="scale(0.4) translate(480,460)"/>
+    <polygon points="240,155 244,167 256,167 246,174 250,186 240,179 230,186 234,174 224,167 236,167"
+             fill="#FFD000" transform="scale(0.35) translate(700,200)"/>
+  </g>
+
+  <!-- Horizontal court floor line at bottom -->
+  <line x1="0" y1="460" x2="800" y2="460" stroke="#2A1A50" stroke-width="1" opacity="0.5"/>
+
+  <!-- Floor reflection of ball (very subtle) -->
+  <ellipse cx="138" cy="468" rx="60" ry="8" fill="#FF5C00" opacity="0.06"/>
+
+  <!-- Studio/publisher tag bottom right -->
+  <text x="775" y="490"
+        font-family="'Arial', sans-serif"
+        font-size="10"
+        letter-spacing="2"
+        fill="#FFFFFF"
+        opacity="0.2"
+        text-anchor="end">© OPEN COURT STUDIOS</text>
+</svg>
